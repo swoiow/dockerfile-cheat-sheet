@@ -56,6 +56,11 @@ RUN sed -i 's/http/https/g' $SOURCES \
 ---
 > 设置 debian 更新镜像 (Mirror)
 
+- mirrors.tuna.tsinghua.edu.cn
+- mirrors.ustc.edu.cn
+- mirrors.163.com/debian
+- mirrors.aliyun.com
+
 ```
 ARG MIRROR=mirrors.ustc.edu.cn
 ARG SOURCES="/etc/apt/sources.list"
