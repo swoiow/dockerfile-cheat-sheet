@@ -58,7 +58,7 @@ RUN sed -i 's/http/https/g' $SOURCES \
 
 - mirrors.tuna.tsinghua.edu.cn
 - mirrors.ustc.edu.cn
-- mirrors.163.com/debian
+- mirrors.163.com
 - mirrors.aliyun.com
 
 ```
