@@ -10,6 +10,12 @@ ENV LC_ALL=C.UTF-8 \
 ```
 
 ---
+> 设置[时区](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
+```
+ENV TZ=Asia/Shanghai
+```
+
+---
 > 拷贝 ldd
 
 ```
@@ -45,6 +51,10 @@ rm -rf /root/.cache /tmp/* /var/lib/apt/* /var/cache/* /var/log/*
 
 ---
 > 设置 alpine 更新镜像 (Mirror)
+
+- mirrors.aliyun.com
+- mirrors.ustc.edu.cn
+- mirrors.tuna.tsinghua.edu.cn
 
 ```
 ARG MIRROR=mirrors.aliyun.com
