@@ -79,3 +79,9 @@ RUN sed -i 's/deb.debian.org/'$MIRROR'/g' $SOURCES
 
 ---
 > 设置 ubuntu 更新镜像 (Mirror)
+
+---
+> 设置 PyPI 更新镜像 (Mirror)
+```
+ENV PIP_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple
+```
