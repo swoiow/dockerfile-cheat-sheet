@@ -28,6 +28,9 @@ ldd /usr/bin/env | grep "=> /" | awk '{print $3}' | xargs -I '{}' cp -L -n -v '{
 ```
 ADD https://github.com/Yelp/dumb-init/releases/download/v1.2.2/dumb-init_1.2.2_amd64 /usr/local/bin/dumb-init
 RUN chmod +x /usr/local/bin/dumb-init
+
+# before the last end line
+ENTRYPOINT ["dumb-init", "--"]
 ```
 
 ---
@@ -57,7 +60,7 @@ rm -rf /root/.cache /tmp/* /var/lib/apt/* /var/cache/* /var/log/*
 - mirrors.tuna.tsinghua.edu.cn
 
 ```
-ARG MIRROR=mirrors.aliyun.com
+ARG MIRROR=mirrors.tuna.tsinghua.edu.cn
 ARG SOURCES="/etc/apk/repositories"
 RUN sed -i 's/http/https/g' $SOURCES \
     && sed -i 's/dl-cdn.alpinelinux.org/'$MIRROR'/g' $SOURCES
@@ -72,7 +75,7 @@ RUN sed -i 's/http/https/g' $SOURCES \
 - mirrors.aliyun.com
 
 ```
-ARG MIRROR=mirrors.ustc.edu.cn
+ARG MIRROR=mirrors.tuna.tsinghua.edu.cn
 ARG SOURCES="/etc/apt/sources.list"
 RUN sed -i 's/deb.debian.org/'$MIRROR'/g' $SOURCES
 ```
@@ -82,6 +85,11 @@ RUN sed -i 's/deb.debian.org/'$MIRROR'/g' $SOURCES
 
 ---
 > 设置 PyPI 更新镜像 (Mirror)
+
+- https://pypi.tuna.tsinghua.edu.cn/simple/
+- https://pypi.doubanio.com/simple/
+- https://mirrors.aliyun.com/pypi/simple/
+
 ```
 ENV PIP_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple
 ```
