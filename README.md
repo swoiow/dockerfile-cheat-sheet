@@ -1,5 +1,5 @@
 # dockerfile-cheat-sheet
-A list of Dockerfile useful command.
+实用的 Dockerfile 指令。
 
 ---
 > 设置语言
