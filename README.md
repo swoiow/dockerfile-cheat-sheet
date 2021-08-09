@@ -26,7 +26,7 @@ ldd /usr/bin/env | grep "=> /" | awk '{print $3}' | xargs -I '{}' cp -L -n -v '{
 > 安装 dumb-init
 
 ```
-ADD https://github.com/Yelp/dumb-init/releases/download/v1.2.2/dumb-init_1.2.2_amd64 /usr/local/bin/dumb-init
+ADD https://github.com/Yelp/dumb-init/releases/download/v1.2.5/dumb-init_1.2.5_x86_64 /usr/local/bin/dumb-init
 RUN chmod +x /usr/local/bin/dumb-init
 
 # before the last end line
@@ -82,6 +82,11 @@ RUN sed -i 's/deb.debian.org/'$MIRROR'/g' $SOURCES
 
 ---
 > 设置 ubuntu 更新镜像 (Mirror)
+```
+ARG MIRROR=mirrors.tuna.tsinghua.edu.cn
+ARG SOURCES="/etc/apt/sources.list"
+RUN sed -i 's/archive.ubuntu.com/'$MIRROR'/g' $SOURCES
+```
 
 ---
 > 设置 PyPI 更新镜像 (Mirror)
