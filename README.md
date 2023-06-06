@@ -98,3 +98,12 @@ RUN sed -i 's/archive.ubuntu.com/'$MIRROR'/g' $SOURCES
 ```
 ENV PIP_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple
 ```
+
+---
+> 一行设置`--no-install-recommends`
+
+```
+apt-config dump | grep -we Recommends -e Suggests | sed s/1/0/ | tee /etc/apt/apt.conf.d/999norecommend
+```
+
+
